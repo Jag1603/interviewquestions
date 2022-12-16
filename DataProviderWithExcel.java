@@ -1,4 +1,4 @@
-package dataDrivenPackage;
+package dpexcel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class DataProviderWithExcel {
 
-	public static WebDriver driver;
+	WebDriver driver;
 	 
     @BeforeMethod
     public void setUp() {
@@ -22,20 +22,19 @@ public class DataProviderWithExcel {
     }
  
     @Test(dataProvider = "excelData", dataProviderClass = ExcelDataProvider.class)
-    public void search(String keyWord1, String keyWord2) throws Exception {
-    	Thread.sleep(5000);
-//    	driver.findElement(By.name("username")).clear();
-//		driver.findElement(By.name("username")).sendKeys(uname);
-//		driver.findElement(By.name("password")).clear();
-//		driver.findElement(By.name("password")).sendKeys(password);
+    public void search(String uname, String password) {
+    	driver.findElement(By.name("username")).clear();
+		driver.findElement(By.name("username")).sendKeys(uname);
+		driver.findElement(By.name("password")).clear();
+		driver.findElement(By.name("password")).sendKeys(password);
  
-		
-		WebElement txtBox = driver.findElement(By.id("sb_form_q"));
-		txtBox.sendKeys(keyWord1, " ", keyWord2);
-		System.out.println("Keyword entered is : " + keyWord1 + " " + keyWord2);
-		txtBox.sendKeys(Keys.ENTER);
-		System.out.println("Search results are displayed.");
-		
+		/*
+		 * WebElement txtBox = driver.findElement(By.id("sb_form_q"));
+		 * txtBox.sendKeys(keyWord1, " ", keyWord2);
+		 * System.out.println("Keyword entered is : " + keyWord1 + " " + keyWord2);
+		 * txtBox.sendKeys(Keys.ENTER);
+		 * System.out.println("Search results are displayed.");
+		 */
     }
  
     @AfterMethod

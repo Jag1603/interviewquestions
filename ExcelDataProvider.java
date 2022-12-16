@@ -1,4 +1,4 @@
-package dataDrivenPackage;
+package dpexcel;
 
 import java.io.*;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class ExcelDataProvider{
     public Object[][] excelDataProvider() throws IOException {
         // We are creating an object from the excel sheet data by calling a method that
         // reads data from the excel stored locally in our system
-        Object[][] arrObj = getExcelData("E:\\naveen documents\\SearchInBing.xlsx","Details");
+        Object[][] arrObj = getExcelData("D:\\Projects\\eclipse-workspace\\data_driven\\SearchInBing.xlsx","Details");
         return arrObj;
     }
  
